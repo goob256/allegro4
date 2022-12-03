@@ -872,7 +872,7 @@ static BITMAP *_xwin_private_create_screen(GFX_DRIVER *drv, int w, int h,
       Atom _NET_WM_ICON;
       _NET_WM_ICON = XInternAtom(_xwin.display, "_NET_WM_ICON", False);
       XChangeProperty(_xwin.display, _xwin.wm_window, _NET_WM_ICON, XA_CARDINAL, 32,
-         PropModeReplace, (unsigned char *)icon_data, (512*512+2));
+         PropModeReplace, (unsigned char *)icon_data, (icon_data[0]*icon_data[1]+2));
 
       /* Map the window managed window.  */
       XMapWindow(_xwin.display, _xwin.wm_window);

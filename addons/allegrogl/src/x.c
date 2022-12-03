@@ -31,8 +31,8 @@
 
 
 #ifdef ALLEGRO_XWINDOWS_WITH_XPM
-#include <X11/xpm.h>
-extern void *allegro_icon;
+//#include <X11/xpm.h>
+//extern void *allegro_icon;
 #endif
 
 
@@ -1257,10 +1257,12 @@ old_choose_visual:
 		wm_hints.initial_state = NormalState;
 
 #ifdef ALLEGRO_XWINDOWS_WITH_XPM
+		/*
 		if (allegro_icon) {
 			wm_hints.flags |= IconPixmapHint | IconMaskHint  | WindowGroupHint;
 			XpmCreatePixmapFromData(_xwin.display, _xwin.window, allegro_icon,&wm_hints.icon_pixmap, &wm_hints.icon_mask, NULL);
 		}
+		*/
 #endif
 
 		XSetWMHints(_xwin.display, _xwin.window, &wm_hints);
